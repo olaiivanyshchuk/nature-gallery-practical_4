@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Gallery — Галерея природи</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS: defer — запуск після побудови DOM-дерева -->
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Перемкнути тему">Темна тема</button>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Nature Gallery</h1>
+            <p>Відчуй красу природи</p>
+            <a href="#gallery">Відкрити галерею</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery" class="gallery-section">
+            <h2>Галерея природи</h2>
+            <p class="gallery-intro">
+                Відкрий для себе красу гір, лісів і водоспадів.
+            </p>
+            <p class="likes-total">Усього вподобань: <strong id="likes-total">0</strong></p>
+
+            <div class="gallery-grid">
+
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Величні гірські вершини" loading="lazy">
+                    <h3>Гірські вершини</h3>
+                    <audio controls>
+                        <source src="audio/wind.wav" type="audio/wav">
+                    </audio>
+                    <p>Місце, де торкаєшся неба.</p>
+                    <button type="button" class="like-btn" aria-pressed="false" aria-label="Вподобати: Гірські вершини">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+                        <span class="like-count">0</span>
+                    </button>
+                </article>
+
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b" alt="Зелений ліс" loading="lazy">
+                    <h3>Тиша лісу</h3>
+                    <audio controls>
+                        <source src="audio/forest.wav" type="audio/wav">
+                    </audio>
+                    <p>Спокій серед зелених дерев.</p>
+                    <button type="button" class="like-btn" aria-pressed="false" aria-label="Вподобати: Тиша лісу">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+                        <span class="like-count">0</span>
+                    </button>
+                </article>
+
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000" alt="Озеро серед природи" loading="lazy">
+                    <h3>Гірське озеро</h3>
+                    <audio controls>
+                        <source src="audio/lake.wav" type="audio/wav">
+                    </audio>
+                    <p>Дзеркало чистої води.</p>
+                    <button type="button" class="like-btn" aria-pressed="false" aria-label="Вподобати: Гірське озеро">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+                        <span class="like-count">0</span>
+                    </button>
+                </article>
+
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" alt="Будинок біля озера та гір" loading="lazy">
+                    <h3>Ранок у горах</h3>
+                    <audio controls>
+                        <source src="audio/birds.wav" type="audio/wav">
+                    </audio>
+                    <p>Новий день серед краси природи.</p>
+                    <button type="button" class="like-btn" aria-pressed="false" aria-label="Вподобати: Ранок у горах">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+                        <span class="like-count">0</span>
+                    </button>
+                </article>
+
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Природний пейзаж" loading="lazy">
+                    <h3>Дикі простори</h3>
+                    <audio controls>
+                        <source src="audio/walking.wav" type="audio/wav">
+                    </audio>
+                    <p>Природа без зайвого шуму.</p>
+                    <button type="button" class="like-btn" aria-pressed="false" aria-label="Вподобати: Дикі простори">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+                        <span class="like-count">0</span>
+                    </button>
+                </article>
+
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027" alt="Олені у природному середовищі" loading="lazy">
+                    <h3>Світ тварин</h3>
+                    <audio controls>
+                        <source src="audio/animals.wav" type="audio/wav">
+                    </audio>
+                    <p>Життя у гармонії з природою.</p>
+                    <button type="button" class="like-btn" aria-pressed="false" aria-label="Вподобати: Світ тварин">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+                        <span class="like-count">0</span>
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Про нас</h2>
+            <p>
+                Nature Gallery — це простір для тих, хто цінує красу природи.
+                Ми зібрали фотографії та звуки гір, лісів, озер і дикої природи,
+                щоб подарувати тобі хвилину спокою та натхнення.
+            </p>
+        </section>
+
+        <section id="feedback" class="feedback-section">
+            <h2>Зворотний зв’язок</h2>
+            <p class="gallery-intro">Напишіть, який куточок природи додати до галереї.</p>
+
+            <form id="feedback-form" class="feedback-form" novalidate>
+                <label for="fb-name">Ім’я</label>
+                <input id="fb-name" type="text" autocomplete="name">
+                <p class="error" id="fb-name-error"></p>
+
+                <label for="fb-email">Електронна пошта</label>
+                <input id="fb-email" type="email" autocomplete="email">
+                <p class="error" id="fb-email-error"></p>
+
+                <label for="fb-message">Повідомлення</label>
+                <textarea id="fb-message" rows="4" maxlength="300"></textarea>
+                <div class="fb-meta">
+                    <p class="error" id="fb-message-error"></p>
+                    <span id="fb-count">0 / 300</span>
+                </div>
+
+                <button type="submit" class="btn">Надіслати</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Nature Gallery</p>
+    </footer>
+
+    <!-- Модальне вікно -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-box">
+            <h3 id="modal-title">Дякуємо!</h3>
+            <p id="modal-text"></p>
+            <button type="button" id="modal-close" class="btn">Закрити</button>
+        </div>
+    </div>
+
+    <button type="button" id="to-top" class="to-top" aria-label="Нагору">Нагору</button>
+
+</body>
+</html>

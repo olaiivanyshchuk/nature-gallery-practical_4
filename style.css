@@ -1,0 +1,435 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F7F5EF;
+    color: #303A32;
+    line-height: 1.6;
+}
+
+.hero {
+    min-height: 500px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.hero-content a {
+    display: inline-block;
+    background-color: #DCE5D8;
+    color: #303A32;
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-content a:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+.gallery-section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.gallery-section h2,
+.about-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.gallery-intro {
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.gallery-card {
+    min-width: 0;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(48, 58, 50, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(48, 58, 50, 0.15);
+}
+
+.gallery-card img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    margin-bottom: 18px;
+}
+
+.gallery-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    margin: 0 15px 10px;
+}
+
+.gallery-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 15px;
+    color: #61745B;
+}
+
+.gallery-card audio {
+    display: block;
+    width: calc(100% - 30px);
+    max-width: 320px;
+    margin: 15px auto;
+    height: 40px;
+}
+
+.about-section {
+    padding: 50px 8%;
+    text-align: center;
+    background-color: #DCE5D8;
+}
+
+.about-section p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+footer {
+    background-color: #303A32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-section {
+        padding: 40px 5%;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+}
+
+
+/* Перемикач теми */
+.theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #303A32;
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font: 600 14px 'Inter', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Лайки */
+.likes-total {
+    margin: -20px 0 30px;
+    color: #61745B;
+}
+
+.gallery-card .like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 15px;
+    padding: 6px 14px;
+    background: none;
+    border: 1px solid #DCE5D8;
+    border-radius: 20px;
+    color: #61745B;
+    font: 600 15px 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.like-btn svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform 0.2s;
+}
+
+.like-btn:hover {
+    background-color: #F1F5EF;
+}
+
+.like-btn.liked {
+    color: #C0392B;
+    border-color: #C0392B;
+}
+
+.like-btn.liked svg {
+    fill: #C0392B;
+    transform: scale(1.15);
+}
+
+/* Форма зворотного зв'язку */
+.feedback-section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.feedback-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.feedback-form {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: left;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(48, 58, 50, 0.08);
+}
+
+.feedback-form label {
+    display: block;
+    margin-top: 14px;
+    font-weight: 600;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 12px;
+    border: 1px solid #C9D3C5;
+    border-radius: 6px;
+    background-color: white;
+    color: inherit;
+    font: inherit;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    outline: 2px solid #61745B;
+    outline-offset: 1px;
+}
+
+.feedback-form .invalid {
+    border-color: #C0392B;
+}
+
+.feedback-form .valid {
+    border-color: #61745B;
+}
+
+.error {
+    min-height: 1.3em;
+    margin-top: 4px;
+    font-size: 14px;
+    color: #C0392B;
+}
+
+.fb-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 14px;
+    color: #61745B;
+}
+
+.btn {
+    margin-top: 18px;
+    padding: 12px 26px;
+    background-color: #303A32;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font: 600 15px 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #61745B;
+}
+
+/* Модальне вікно */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-box {
+    max-width: 420px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.modal-box h3 {
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+}
+
+/* Кнопка «Нагору» */
+.to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    padding: 10px 16px;
+    background-color: #303A32;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font: 600 14px 'Inter', sans-serif;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Темна тема */
+body.dark {
+    background-color: #1B211C;
+    color: #E3E9DF;
+}
+
+body.dark .gallery-card,
+body.dark .feedback-form,
+body.dark .modal-box {
+    background-color: #262E28;
+}
+
+body.dark .gallery-card p,
+body.dark .likes-total,
+body.dark .fb-meta {
+    color: #A9BCA3;
+}
+
+body.dark .about-section {
+    background-color: #2B352D;
+}
+
+body.dark footer {
+    background-color: #121612;
+}
+
+body.dark .feedback-form input,
+body.dark .feedback-form textarea {
+    background-color: #1B211C;
+    border-color: #44524A;
+}
+
+body.dark .gallery-card .like-btn {
+    border-color: #44524A;
+    color: #A9BCA3;
+}
+
+body.dark .gallery-card .like-btn.liked {
+    color: #E57366;
+    border-color: #E57366;
+}
+
+body.dark .like-btn.liked svg {
+    fill: #E57366;
+}
+
+body.dark .btn,
+body.dark .to-top {
+    background-color: #DCE5D8;
+    color: #1B211C;
+}
+
+body.dark .theme-toggle {
+    background-color: rgba(38, 46, 40, 0.95);
+    color: #E3E9DF;
+}
